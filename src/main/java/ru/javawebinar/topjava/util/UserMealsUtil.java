@@ -60,12 +60,18 @@ public class UserMealsUtil {
 
         /*
         //Using Stream API HW
-       mealList.stream().
-                forEach(m -> caloriesMap.put(m.getDateTime().toLocalDate(), Optional.ofNullable(caloriesMap.get(m.getDateTime().toLocalDate())).orElse(0) + m.getCalories()));
+        // Using Optional.ofNullable
+       //mealList.stream().
+       //         forEach(m -> caloriesMap.put(m.getDateTime().toLocalDate(), Optional.ofNullable(caloriesMap.get(m.getDateTime().toLocalDate())).orElse(0) + m.getCalories()));
+
+        // Using getOrDefault
+        mealList.stream().
+                 forEach(m -> caloriesMap.put(m.getDateTime().toLocalDate(), caloriesMap.getOrDefault(m.getDateTime().toLocalDate(), 0) + m.getCalories()));
 
         mealList.stream().
                 filter(m -> TimeUtil.isBetween(m.getDateTime().toLocalTime(), startTime, endTime)).
                 forEach(m -> resultList.add(new UserMealWithExceed(m.getDateTime(), m.getDescription(), m.getCalories(), (caloriesMap.get(m.getDateTime().toLocalDate()) > caloriesPerDay))));
+
         */
 
         /*
